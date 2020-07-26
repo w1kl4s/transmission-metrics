@@ -3,8 +3,6 @@ from setuptools import setup, find_packages
 from codecs import open
 from os import path
 
-from src import version
-
 here = path.abspath(path.dirname(__file__))
 
 # Get the long description from the README file
@@ -14,7 +12,7 @@ with open(path.join(here, "README.md"), encoding="utf-8") as f:
 setup(
     name="yatrex",
 
-    version=version,
+    version='0.1.0',
 
     description="Yet Another TRansmission EXporter",
     long_description=long_description,
@@ -39,6 +37,6 @@ setup(
     keywords="transmission monitoring metrics exporter",
     packages=["src"],
     entry_points={
-        "console_scripts": ["yatrex=src.commandline:main"]
+        "console_scripts": ["yatrex=src.commandline:start"]
     }
 )

@@ -1,0 +1,20 @@
+[
+    {
+        "name": "client-1", 
+        "url": "http://localhost:9091/transmission/rpc",
+        "user": "w1kl4s",
+        "password": "yatrex"
+    },
+    {
+        "name": "client-2",
+        "url": "http://localhost:9092/transmission/rpc",
+        "user": "w1kl4s",
+        "password": "yatrex"
+    },
+    {
+        "name": "seedbox",
+        "url": "http://1.2.3.4:5678/w1kl4s/transmission/rpc",
+        "user": "w1kl4s",
+        "password": "abcdEFGH1234"
+    }
+]
