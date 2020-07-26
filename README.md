@@ -1,8 +1,8 @@
-## yatrex - Yet Another TRansmission Exporter
+# yatrex - Yet Another TRansmission Exporter
 
 yatrex is a server/daemon made for collecting data from Transmission torrent client and exposing it in Prometheus-compatible format `--mode pull` or pushing it to Influx-compatible endpoints `--mode push` (latter is still in development). 
 
-# Installation:
+## Installation:
 In the future, package will be avalaible on PyPI, for now you will have to clone the repo and install it manually:
 
 ```
@@ -18,7 +18,7 @@ pip 20.1.1 from /usr/lib/python3.8/site-packages/pip (python 3.8)
 ```
 However, many distributions will still have `pip` as python2 pip, and `pip3` as python3 pip. Use correct `pip` for installing, else it will fail.
 
-# Usage:
+## Usage:
 
 Only requiered argument is the config file which contains data of clients you want to scrape. Check out the example file `clients.json.example`. Use other options to override the defaults, like bind address, port, or interval between scrapes.
 
@@ -26,5 +26,5 @@ Only requiered argument is the config file which contains data of clients you wa
 $ yatrex -c yatrex_config.json --p 1234 --address ::1 --interval 15
 ```
 
-# WIP
+## WIP
 This program is heavily in development. There is tons of stuff i want to add, and you can expect frequent updates.
