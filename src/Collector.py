@@ -9,6 +9,8 @@ from src import TransmissionHandler
 class CollectorThread(threading.Thread):
     def __init__(self, instance, interval):
         threading.Thread.__init__(self)
+        self.exit = threading.Event()
+
         self.instance = instance
         self.metrics = None
         self.interval = interval 
@@ -29,7 +31,7 @@ class CollectorThread(threading.Thread):
     def _parse_session_stats(self, session_stats):
         if session_stats['result'] != 'success':
             #TODO: Raise an exception in the future, that shouldn't happen
-            pass
+            return None 
 
         data = self._flatten(session_stats['arguments'])
 
@@ -51,11 +53,10 @@ class CollectorThread(threading.Thread):
                         user=self.instance['user'],
                         password=self.instance['password']
                     )
-        while True:
+        while not self.exit.is_set(): 
             session_stats = client.get_session_stats()
             self.metrics = self._parse_session_stats(session_stats)
-            time.sleep(self.interval)
-
+            self.exit.wait(self.interval)
 
 
 def start_collectors(instances, interval):
