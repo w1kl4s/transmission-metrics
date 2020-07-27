@@ -36,6 +36,9 @@ setup(
     python_requires=">=3.6, <4",
     keywords="transmission monitoring metrics exporter",
     packages=["src"],
+    install_requires=[
+        "requests"
+    ],
     entry_points={
         "console_scripts": ["yatrex=src.commandline:start"]
     }

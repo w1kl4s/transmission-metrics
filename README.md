@@ -20,7 +20,7 @@ However, many distributions will still have `pip` as python2 pip, and `pip3` as 
 
 ## Usage:
 
-Only requiered argument is the config file which contains data of clients you want to scrape. Check out the example file `clients.json.example`. Use other options to override the defaults, like bind address, port, or interval between scrapes.
+Only required argument is the config file which contains data of clients you want to scrape. Check out the example file `clients.json.example`. Use other options to override the defaults, like bind address, port, or interval between scrapes.
 
 ```
 $ yatrex -c yatrex_config.json --p 1234 --address ::1 --interval 15
